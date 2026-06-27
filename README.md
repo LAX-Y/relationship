@@ -1,192 +1,149 @@
-# Relationship Coach — OpenClaw Skill
+# Relationship Coach — 用科学理论指导你的亲密关系
 
-**An OpenClaw skill for relationship chat analysis using 15 empirically validated psychological theories.**
+**一个基于 26 个实证心理学理论的 OpenClaw 聊天分析 skill。**
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-%3E%3D2026.3.22-green)](https://openclaw.ai)
 
 ---
 
-## What It Does
+## 这个 skill 能做什么
 
-This skill transforms OpenClaw into a relationship coach that analyzes your chat records with a romantic interest. It applies **15 scientifically validated psychological theories** to deliver structured, actionable coaching — not generic "communication tips", but evidence-backed analysis with specific behavioral recommendations.
+把你的聊天记录发给它，它用 **26 个经过实证检验的心理学理论** 来分析，告诉你：
 
-### Analysis Dimensions
+- 你和 TA 的互动质量健康吗？（戈特曼 5:1 正负比 + 四骑士检测）
+- 你们是不是陷入了焦虑-回避陷阱？（依恋理论）
+- 谁在这段关系中更有权力？（最少兴趣原则）
+- 你的大脑是不是在骗你？（认知失调、曝光效应、蔡格尼克效应）
+- 这到底算不算爱？（斯滕伯格爱情三角诊断）
+- 值不值得继续？（Rusbult 投入模型）
+- 下一次该怎么互动？（峰终定律 + 强化理论 + 社会渗透）
 
-| Dimension | Theory Used | What It Tells You |
-|-----------|------------|-------------------|
-| **Interaction Quality** | Gottman's 5:1 Ratio + Four Horsemen | Is your communication healthy or toxic? |
-| **Attachment Dynamics** | Bowlby & Bartholomew Attachment Theory | Are you in an anxious-avoidant trap? |
-| **Power Balance** | Waller's Least Interest + Brehm's Reactance | Who holds the power in this dynamic? |
-| **Communication Quality** | Rosenberg's NVC + Altman's Social Penetration | Are you connecting or pushing away? |
-| **Cognitive Traps** | Festinger's Dissonance + Ellis's ABC | Is your brain lying to you about this? |
-| **Love Type Diagnosis** | Sternberg's Triangular Theory | Is this love, infatuation, or nostalgia? |
-
----
-
-## Theories & Scientific Sources
-
-| # | Theory | Source |
-|---|--------|--------|
-| 1 | Zeigarnik Effect | Zeigarnik (1927) |
-| 2 | Attachment Theory | Bowlby (1969); Bartholomew (1991) |
-| 3 | Nonviolent Communication | Rosenberg (1972) |
-| 4 | Social Exchange Theory | Thibaut & Kelley (1959) |
-| 5 | Peak-End Rule | Kahneman (1999) |
-| 6 | Loss Aversion | Kahneman & Tversky (1979) |
-| 7 | Reinforcement Theory | Skinner (1953) |
-| 8 | Sternberg's Triangular Theory of Love | Sternberg (1986), *Psychological Review* |
-| 9 | Gottman's Four Horsemen + 5:1 Ratio | Gottman (1994, 1999, 2015) |
-| 10 | Rusbult's Investment Model | Rusbult (1980, 1983), *JPSP* |
-| 11 | Self-Expansion Theory + Michelangelo Phenomenon | Aron & Aron (1986); Drigotas et al. (1999) |
-| 12 | Mere Exposure Effect | Zajonc (1968) |
-| 13 | Social Penetration Theory | Altman & Taylor (1973) |
-| 14 | Cognitive Dissonance + ABC Model (REBT) | Festinger (1957); Ellis (1955) |
-| 15 | Self-Determination Theory | Deci & Ryan (2000) |
-
-**Full theory reference:** See `references/theory_reference.md` (~25 pages with experimental citations, mechanisms, and practical applications).
+**不是通用的"好好沟通"——每条建议都有科学依据和置信度标注。**
 
 ---
 
-## Installation
+## 26 个理论基础
 
-### Prerequisites
+| 时期 | 理论 | 来源 |
+|------|------|------|
+| 经典 | 蔡格尼克效应、曝光效应、互惠喜欢、最少兴趣原则、心理抗拒 | 1927-1968 |
+| 基础 | 依恋理论、非暴力沟通、社会渗透、认知失调、情绪 ABC（REBT） | 1950s-1990s |
+| 实验 | 戈特曼四骑士+5:1、斯滕伯格三角、Rusbult 投入模型、峰终定律、损失厌恶 | 1979-2015 |
+| 最新 | 成长vs命运心态、关系动荡理论、感知伴侣回应性、感恩绑定理论、积极建设性回应、智慧推理 | 2004-2017 |
 
-- OpenClaw >= 2026.3.22
-- Node.js >= 22
+**全部理论均标注原始实证来源（期刊、年份、作者）。**
 
-### Quick Install
+---
+
+## 适用人群
+
+5 种场景，分别引导不同阅读路径：
+
+| 场景 | 描述 |
+|------|------|
+| A | 初次心动——从未开始，不知怎么推进 |
+| B | 暧昧/早期约会——关系定义模糊 |
+| C | 分手后放不下——过去仍然影响你 |
+| D | 关系中遇到问题——需要修复 |
+| E | 稳定关系——想维护和深化 |
+
+---
+
+## 安装
 
 ```bash
-# Install the skill into your workspace
 cd ~/.openclaw/workspace/skills
-git clone https://github.com/YOUR_USERNAME/openclaw-relationship-coach.git relationship-coach-oss
-```
-
-Then restart the OpenClaw gateway:
-
-```bash
+git clone https://github.com/LAX-Y/relationship.git relationship-coach-oss
 openclaw gateway restart
 ```
 
-The skill will appear in your enabled skills list as `relationship-coach-oss`.
+---
+
+## 首次使用
+
+在对话中说"感情咨询"或"帮我分析聊天记录"。首次使用时会自动引导你填写 6 模块画像问卷（你是谁 → TA 的画像 → 你们的故事 → 依恋自测 → 行为观察 → 你的目标）。
 
 ---
 
-## First Use
+## 核心特性
 
-Start a new conversation with OpenClaw and say any of the following:
-
-- "感情咨询"
-- "帮我分析一段聊天记录"
-- "这段对话什么意思"
-- "我该怎么回她"
-- "她是不是喜欢我"
-
-On first use, the skill detects you have no profile yet and guides you through a **6-module interactive questionnaire** covering:
-
-1. **Who You Are** (15%) — personality type, gender, age
-2. **Partner Profile** (35%) — their personality, conflict style, emotional openness, inferred attachment
-3. **Your Story** (20%) — relationship history, break-reconnect cycles, current status
-4. **Attachment Self-Test** (15%) — ECR-based anxiety/avoidance scoring
-5. **Partner Behavior Observations** (10%) — specific patterns you've noticed
-6. **Your Goals** (5%) — what you actually want and whether you can accept "exit" as an outcome
-
-Or run the questionnaire from the command line:
-
-```bash
-python scripts/init_profile.py
-```
+- **画像自动纠正：** 自述可能有偏差——skill 会根据实际聊天数据自动检测并纠正
+- **反确认偏差：** 在推荐"继续"之前，强制检查"我是不是因为用户想听才这么说？"
+- **双场景输出：** 每个重大决策都同时输出"继续的路径"和"退出的路径"
+- **置信度标注：** 每条建议标注高/中/低置信度
+- **数据全本地：** 所有聊天记录和分析存储在本地
 
 ---
 
-## How It Works
+## 科学诚信
 
-```
-You paste chat records
-        ↓
-Skill appends to archive
-        ↓
-Loads your relationship profile
-        ↓
-Analyzes across 6 psychological dimensions
-        ↓
-Outputs structured report:
-  • Key metrics (5:1 ratio, Sternberg scores, cold-shoulder counter)
-  • Pattern discoveries
-  • Warning signals (if any)
-  • Actionable recommendations
-  • Suggested replies (NVC format, 2-3 tone options)
-  • Theory references with confidence levels
-        ↓
-Auto-corrects profile if behavior contradicts self-report
-        ↓
-Compresses old records into summary when archive grows
-```
+- 所有 26 个理论均引用同行评审的原始文献
+- MBTI 等工具仅作启发式描述，手册中明确标注其学术局限性
+- 不讨好用户——证据指向退出时，直接建议退出
+- 不确定时，标注不确定
+
+---
+
+## 隐私
+
+所有数据存储在你本地的 `memory/` 目录中。不上传、不收集、不分享。
+
+---
+
+## 执照
+
+MIT
+
+---
+
+> ⚠️ 本 skill 提供基于科学理论的心理分析，但不能替代专业心理咨询。如果你正经历严重的情绪困扰或关系暴力，请寻求专业帮助。
+
+---
+
+## Relationship Coach — Science-Backed Relationship Analysis for OpenClaw
+
+An OpenClaw skill that analyzes your chat records using **26 empirically validated psychological theories**. Not generic advice — evidence-backed analysis with specific, actionable recommendations.
+
+### What It Does
+
+Paste your chat records. The skill analyzes them across 6 dimensions:
+
+- **Interaction Quality** — Gottman's 5:1 ratio + Four Horsemen detection
+- **Attachment Dynamics** — Bowlby & Bartholomew attachment patterns
+- **Power Balance** — Waller's Least Interest + Brehm's Reactance
+- **Communication** — NVC + Social Penetration + PPR + ACR
+- **Cognitive Traps** — Dissonance, ABC model, Zeigarnik, Growth/Destiny beliefs
+- **Love Diagnosis** — Sternberg's Triangle + Rusbult's Investment Model
+
+### Theories (26 total)
+
+Early (1927-1968): Zeigarnik Effect, Mere Exposure, Reciprocity of Liking, Least Interest, Reactance
+
+Foundational (1950s-1990s): Attachment Theory, NVC, Social Penetration, Cognitive Dissonance, ABC/REBT
+
+Experimental (1979-2015): Gottman's Four Horsemen & 5:1 Ratio, Sternberg's Triangle, Rusbult's Investment Model, Peak-End Rule, Loss Aversion, Self-Determination Theory, Self-Expansion & Michelangelo Phenomenon
+
+Recent (2004-2017): Growth vs Destiny Beliefs (Howe & Dweck, 2016), Relational Turbulence Theory (Solomon et al., 2016), Perceived Partner Responsiveness (Reis et al., 2017), Find-Remind-Bind Gratitude (Algoe, 2016), Active Constructive Responding (Gable, 2004), Wise Reasoning (Grossmann, 2017)
 
 ### Key Features
 
-- **Profile Auto-Correction:** Self-report is biased. The skill compares your stated profile against actual chat behavior and corrects discrepancies — with evidence and confidence levels.
-- **Anti-Confirmation Bias:** Before recommending "continue", the skill asks: *"Am I leaning this way because evidence supports it, or because the user wants to hear it?"*
-- **Dual-Scenario Output:** Every decision recommendation outputs both "what happens if you continue" AND "what happens if you exit" — with equal rigor.
-- **Confidence Annotation:** Every recommendation states its evidence basis and confidence level (高/中/低).
-- **Memory Persistence:** Chat records, analyses, and compressed summaries persist across sessions.
+- Auto-correcting relationship profiles
+- Anti-confirmation bias checks
+- Dual-scenario decision support (continue AND exit paths)
+- Confidence annotations on all recommendations
+- Fully local data storage
 
----
+### Install
 
-## File Structure
-
-```
-relationship-coach-oss/
-├── SKILL.md                         # Skill trigger + 7-step workflow
-├── README.md                        # This file
-├── references/
-│   ├── theory_reference.md          # 25-page theory manual
-│   └── questionnaire.md            # 6-module interactive questionnaire
-├── scripts/
-│   ├── init_profile.py              # Interactive profile builder
-│   ├── score_sternberg.py           # Sternberg love triangle calculator
-│   └── compress_archive.py          # Chat archive compressor
-└── assets/
-    └── report_template.md           # Standardized analysis report template
+```bash
+cd ~/.openclaw/workspace/skills
+git clone https://github.com/LAX-Y/relationship.git relationship-coach-oss
+openclaw gateway restart
 ```
 
----
+Trigger with "感情咨询" or "analyze my chat" in a conversation.
 
-## Scientific Integrity
+### License
 
-- All 15 theories cite original peer-reviewed sources with journal names and years.
-- MBTI and other personality type tools are used only as **heuristic descriptors**, not clinical diagnostics. The manual explicitly states their limitations (Pittenger, 1993; Grant, 2013).
-- Recommendations are explicitly anti-sugar-coating: the skill will recommend exit when evidence supports it, regardless of user preference.
-- Uncertainty is acknowledged: every output includes confidence levels and notes when more data is needed.
-
----
-
-## Privacy
-
-- **All data stays local.** Chat records are stored only in your workspace's `memory/` directory.
-- **No data collection.** This skill does not send any data anywhere.
-- **You control everything.** Profile, archives, and analyses are plain Markdown files you can review, edit, or delete at any time.
-
----
-
-## Contributing
-
-Contributions are welcome. Key areas:
-
-- Additional psychological theories backed by empirical research
-- Improved scoring algorithms in `scripts/`
-- Multi-language support
-- Integration with other chat platforms
-
-Please ensure all theory additions include peer-reviewed citations.
-
----
-
-## License
-
-MIT — see [LICENSE](LICENSE)
-
----
-
-> ⚠️ **Disclaimer:** This skill provides psychological analysis based on established scientific theories, but it is not a substitute for professional therapy or counseling. If you're experiencing severe emotional distress or relationship abuse, please seek qualified professional help.
+MIT

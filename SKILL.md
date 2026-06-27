@@ -30,6 +30,8 @@ When the user pastes chat records:
 
 ### 2. Analysis Framework
 
+**Step 0 — Scene Identification (new sessions):** If `memory/relationship_profile_oss.md` exists, check the scene type. If not set, ask the user: "你的情况属于哪种？A 初次心动 / B 暧昧中 / C 分手后放不下 / D 关系遇到问题 / E 稳定关系维护"
+
 For every batch of chat records, produce a structured analysis:
 
 #### A. Interaction Quality (Gottman)
@@ -64,7 +66,7 @@ For every batch of chat records, produce a structured analysis:
 - Score Intimacy, Passion, Commitment (each /25) using `scripts/score_sternberg.py`
 - Classify current relationship type
 - Compare to previous assessments (trend analysis)
-- Map against profile's stated goal
+- Map against profile's stated goal AND scene type (A/B/C/D/E — determines which theories to prioritize)
 
 ### 3. Output Format
 

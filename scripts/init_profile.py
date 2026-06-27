@@ -59,6 +59,19 @@ def main():
     profile = {"created_at": datetime.now().strftime("%Y-%m-%d %H:%M")}
     scores = {}
 
+    # ── Module 0: Scene Identification ──
+    print("\n" + "━" * 40)
+    print("  Part 0: 你的场景")
+    print("━" * 40)
+    scene_opts = [
+        "A — 初次心动：从未在一起，不知怎么推进",
+        "B — 暧昧/早期约会：关系定义模糊",
+        "C — 分手后放不下：过去仍影响着你",
+        "D — 关系中遇到问题：需要修复",
+        "E — 稳定关系维护：想维护和深化"
+    ]
+    profile["scene_type"] = ask("你属于哪种情况？", scene_opts, default="B — 暧昧/早期约会")
+
     # ── Module 1: Who You Are ──
     print("\n" + "━" * 40)
     print("  模块一：你是谁")
@@ -204,6 +217,7 @@ def main():
     profile_md = f"""# 关系画像 — Relationship Profile
 
 > 生成时间: {profile['created_at']}
+> 场景类型: {profile['scene_type']}
 > 依恋类型: {profile['attachment_style']}
 
 ## 基本信息
