@@ -1,0 +1,7 @@
+# Private data — never commit
+memory/
+*.log
+*.pdf
+__pycache__/
+*.pyc
+.DS_Store
