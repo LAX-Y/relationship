@@ -1,9 +1,10 @@
 # Relationship Coach — 用科学理论指导你的亲密关系
 
-**一个基于 26 个实证心理学理论的 OpenClaw 聊天分析 skill。**
+**一个基于 26 个实证心理学理论的多平台通用 AI 技能。支持 OpenClaw / Claude Code / Cursor / ChatGPT 等。**
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![OpenClaw](https://img.shields.io/badge/OpenClaw-%3E%3D2026.3.22-green)](https://openclaw.ai)
+[![Platform](https://img.shields.io/badge/platform-多平台通用-orange)]()
+[![Theories](https://img.shields.io/badge/理论-26个-blue)]()
 
 ---
 
