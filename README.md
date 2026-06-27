@@ -52,11 +52,18 @@
 
 ## 安装
 
+**OpenClaw:**
 ```bash
 cd ~/.openclaw/workspace/skills
 git clone https://github.com/LAX-Y/relationship.git relationship-coach-oss
 openclaw gateway restart
 ```
+
+**Claude Code:** 克隆后在对话中说"帮我分析感情"，`CLAUDE.md` 自动加载。
+
+**Cursor / 通用 Agent:** `AGENTS.md` 会被自动识别。也可将 `CLAUDE.md` 内容粘贴到自定义指令。
+
+**ChatGPT / 任何 LLM:** 粘贴 `CLAUDE.md` 到自定义指令，`references/theory_reference.md` 上传到 Knowledge。
 
 ---
 
