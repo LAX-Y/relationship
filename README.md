@@ -1,6 +1,6 @@
 # Relationship Coach — 科学恋爱教练
 
-**用理解取代猜疑，用逻辑取代焦虑——让爱情可学习。**
+**用理解取代猜疑，用逻辑取代焦虑——让情感可学习。**
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/平台-多平台通用-orange)]()
